@@ -1,0 +1,13 @@
+.form{ 
+  padding: 0 3rem;
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+form h1{
+  color: #eee;
+  font-size: 2rem;
+  align-self: center;
+}
