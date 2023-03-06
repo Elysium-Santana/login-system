@@ -31,20 +31,19 @@ const useForm = (type) => {
   }
 
   function onChange({ target }) {
-    console.log(value);
     setValue(target.value);
     if (error) {
       validate(target.value);
     }
   }
   function onBlur({ target }) {
-    console.log(value);
     validate(target.value);
   }
   return {
     onBlur,
     onChange,
     validate: () => validate(value),
+    value,
     error,
   };
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './AppRoute.module.css';
-import { Link } from 'react-router-dom';
+import { AuthProvider } from '../../AuthContext';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import User from '../Forms/User';
 import CreateUser from '../Forms/CreateUser';
@@ -10,11 +10,13 @@ const appRoute = () => {
   return (
     <div className={styles.RouteBx}>
       <BrowserRouter>
-        <Routes>
-          <Route path="/user" element={<User />} />
-          <Route path="/criar" element={<CreateUser />} />
-          <Route path="/" element={<LoginForm />} />
-        </Routes>
+        <AuthProvider>
+          <Routes>
+            <Route path="/user" element={<User />} />
+            <Route path="/criar" element={<CreateUser />} />
+            <Route path="/" element={<LoginForm />} />
+          </Routes>
+        </AuthProvider>
       </BrowserRouter>
     </div>
   );
