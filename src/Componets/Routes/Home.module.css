@@ -1,0 +1,26 @@
+.conteiner{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 1000px;
+  /* padding: 2rem; */
+  background: rgba(0, 0, 0, .5);
+  border-radius: 10px;
+  box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  height: 70vh;
+}  
+.homeContent{
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+}
+.homeContent h1{
+  font-size: 2rem;
+  color: #eee;
+}
+.homeContent p{
+  color: #aaa;
+  font-size: 1.2rem;
+}
