@@ -11,9 +11,9 @@ const appRoute = () => {
     <div className={styles.RouteBx}>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<User />} />
+          <Route path="/user" element={<User />} />
           <Route path="/criar" element={<CreateUser />} />
-          <Route path="/login" element={<LoginForm />} />
+          <Route path="/" element={<LoginForm />} />
         </Routes>
       </BrowserRouter>
     </div>

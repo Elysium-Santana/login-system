@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Inputs.module.css';
 
-const Inputs = ({ name, label, value, onChange, type, error }) => {
+const Inputs = ({ name, label, value, onChange, type, error, onBlur }) => {
   return (
     <div>
       <label className={styles.label} htmlFor={name}>
@@ -12,8 +12,13 @@ const Inputs = ({ name, label, value, onChange, type, error }) => {
         value={value}
         onChange={onChange}
         type={type}
+        onBlur={onBlur}
       />
-      {error && <p>{error}</p>}
+      {error ? (
+        <p style={{ color: 'red' }}>{error}</p>
+      ) : (
+        <p style={{ visibility: 'hidden' }}>{'-'}</p>
+      )}
     </div>
   );
 };
