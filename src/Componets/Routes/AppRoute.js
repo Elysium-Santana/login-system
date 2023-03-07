@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import User from '../Forms/User';
 import CreateUser from '../Forms/CreateUser';
 import LoginForm from '../Forms/LoginForm';
+import { ProtectedRoute } from './ProtectedRoute';
 
 const appRoute = () => {
   return (
@@ -12,7 +13,14 @@ const appRoute = () => {
       <BrowserRouter>
         <AuthProvider>
           <Routes>
-            <Route path="/user" element={<User />} />
+            <Route
+              path="/user"
+              element={
+                <ProtectedRoute>
+                  <User />
+                </ProtectedRoute>
+              }
+            />
             <Route path="/criar" element={<CreateUser />} />
             <Route path="/" element={<LoginForm />} />
           </Routes>

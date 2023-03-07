@@ -14,9 +14,21 @@ const app = initializeApp(firebaseConfig);
 
 const apiKey = firebaseConfig.apiKey;
 
-export function USER_LOGIN(body) {
+export function API_LOGIN(body) {
   return {
     url: URL_BASE + `signInWithPassword?key=${apiKey}`,
+    options: {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(body),
+    },
+  };
+}
+export function API_CREATE_USER(body) {
+  return {
+    url: URL_BASE + `signUp?key=${apiKey}`,
     options: {
       method: 'POST',
       headers: {
