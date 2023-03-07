@@ -10,22 +10,18 @@ import { ProtectedRoute } from './ProtectedRoute';
 const appRoute = () => {
   return (
     <div className={styles.RouteBx}>
-      <BrowserRouter>
-        <AuthProvider>
-          <Routes>
-            <Route
-              path="/user"
-              element={
-                <ProtectedRoute>
-                  <User />
-                </ProtectedRoute>
-              }
-            />
-            <Route path="/criar" element={<CreateUser />} />
-            <Route path="/" element={<LoginForm />} />
-          </Routes>
-        </AuthProvider>
-      </BrowserRouter>
+      <Routes>
+        <Route
+          path="/user"
+          element={
+            <ProtectedRoute>
+              <User />
+            </ProtectedRoute>
+          }
+        />
+        <Route path="/criar" element={<CreateUser />} />
+        <Route path="/" element={<LoginForm />} />
+      </Routes>
     </div>
   );
 };

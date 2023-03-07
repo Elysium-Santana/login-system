@@ -1,8 +1,8 @@
 .input{
   padding: .5rem ;
   border-top: none;
-  border:  solid 2px blueviolet;
-  color: blueviolet;
+  border:  solid 2px var(--color-theme);
+  color: var(--color-theme);
   background: #ddd;
   border-radius: 10px;
   width: 100%;
@@ -11,6 +11,6 @@
 .label{
   display: block;
   font-size: 1.2rem;
-  color:blueviolet;
+  color:var(--color-theme);
   margin-bottom: .5rem;
 }

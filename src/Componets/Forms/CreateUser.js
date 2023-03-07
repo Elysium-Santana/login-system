@@ -6,6 +6,7 @@ import { useContext } from 'react';
 import Inputs from '../Inputs/Inputs';
 import styles from './LoginForm.module.css';
 import Button from '../Inputs/Button';
+import { Link } from 'react-router-dom';
 
 const CreateUser = () => {
   const username = useForm();
@@ -27,11 +28,17 @@ const CreateUser = () => {
   }
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
-      <h1>Login</h1>
+      <h1>Criar conta</h1>
       <Inputs label="Usuário" type="text" {...username} />
       <Inputs label="Email" type="email" {...email} />
       <Inputs label="Password" type="password" {...password} />
-      <Button children={'Criar'} />
+      <Button children={'Criar conta'} />
+      <p>
+        Se enganou? Tudo bem... é só{' '}
+        <Link className={styles.link} to="/">
+          {'<'} Voltar
+        </Link>
+      </p>
     </form>
   );
 };

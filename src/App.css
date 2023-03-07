@@ -3,10 +3,43 @@
   padding: 0;
   box-sizing: border-box;
 }
-.App{
-  background-color: blueviolet;
+:root{
+  --color-theme:'';
+}
+body{
+  background-color: var(--color-theme);
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  
+
+}
+.App{  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-direction: column;
+}
+.bxColor{
+  display: flex;
+  height: 40px;
+  width: 200px;
+  align-self: flex-start;
+  margin-left: 1rem;
+  border-radius: 40px;
+  align-items: center;
+  gap: .5rem;
+  justify-content: center;
+  box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.4);
+
+
+}
+.color{
+  width:30px;
+  height: 30px;
+  border-radius: 50%;
+  box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.4);
+
 }

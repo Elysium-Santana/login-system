@@ -25,9 +25,12 @@ const LoginForm = () => {
       <Inputs label="Email" type="email" {...email} />
       <Inputs label="Password" type="password" {...password} />
       <Button children={'Entrar'} />
-      <p style={{ marginTop: '.5rem', color: '#eee', alignSelf: 'center' }}>
-        Ainda não tem Cadastro? Cadastre-se{' '}
-        <Link to="/criar">{'>'} Clique Aqui</Link>
+      <p>
+        Ainda não tem Cadastro?
+        <Link className={styles.link} to="/criar">
+          {' '}
+          {'>'} Cadastre-se agora!
+        </Link>
       </p>
     </form>
   );

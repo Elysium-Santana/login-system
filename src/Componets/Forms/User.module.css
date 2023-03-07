@@ -1,0 +1,17 @@
+.userBx{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: aliceblue;
+  padding: 2rem;
+
+}
+.userBx h1{
+  color: #fff;
+  font-size: 3rem;  
+}
+.userBx h2{
+  color: var(--color-theme);
+  font-size: 2rem;
+  margin-bottom: .8rem;  
+}

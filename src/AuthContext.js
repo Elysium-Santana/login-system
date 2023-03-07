@@ -1,12 +1,12 @@
 import React, { createContext } from 'react';
 import { userFetch } from './Componets/Hooks/useFetch';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 export const AuthContext = createContext();
+
 export const AuthProvider = ({ children }) => {
-  // const [username, setUsername] = React.useState(null);
   const [data, setData] = React.useState(null);
-  // const [password, setPassword] = React.useState(null);
+  const location = useLocation();
   const navigate = useNavigate();
 
   function responseOk(json) {
@@ -28,16 +28,16 @@ export const AuthProvider = ({ children }) => {
     }
   }
 
-  function userLogout() {
-    localStorage.removeItem('user');
-    setData(null);
-  }
-
   async function loginCreate(api) {
     const { response, json } = await userFetch(api);
     if (response.ok) {
       responseOk(json);
     }
+  }
+
+  function userLogout() {
+    localStorage.removeItem('user');
+    setData(null);
   }
 
   return (
