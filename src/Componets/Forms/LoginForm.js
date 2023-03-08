@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 const LoginForm = () => {
   const email = useForm('email');
   const password = useForm('password');
-  const { userLogin } = useContext(AuthContext);
+  const { userLogin, loading } = useContext(AuthContext);
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -25,6 +25,7 @@ const LoginForm = () => {
       <Inputs label="Email" type="email" {...email} />
       <Inputs label="Password" type="password" {...password} />
       <Button children={'Entrar'} />
+
       <p>
         Ainda não tem Cadastro?
         <Link className={styles.link} to="/criar">

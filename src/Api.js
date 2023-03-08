@@ -1,12 +1,6 @@
-import { initializeApp } from 'firebase/app';
-
 export const URL_BASE = 'https://identitytoolkit.googleapis.com/v1/accounts:';
 
-const firebaseConfig = {
-  apiKey: 'AIzaSyBmJuikBAVI2HfA8OtOuH7dfY-e9OqTc1E',
-};
-
-const apiKey = firebaseConfig.apiKey;
+const apiKey = 'AIzaSyBmJuikBAVI2HfA8OtOuH7dfY-e9OqTc1E';
 
 export function API_LOGIN(body) {
   return {

@@ -34,9 +34,9 @@ const CreateUser = () => {
       <Inputs label="Password" type="password" {...password} />
       <Button children={'Criar conta'} />
       <p>
-        Se enganou? Tudo bem... é só{' '}
+        Já tem cadastro? Clique aqui para{' '}
         <Link className={styles.link} to="/">
-          {'<'} Voltar
+          {'>'} Acesser agora!
         </Link>
       </p>
     </form>

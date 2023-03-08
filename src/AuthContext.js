@@ -1,13 +1,22 @@
 import React, { createContext } from 'react';
 import { userFetch } from './Componets/Hooks/useFetch';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [data, setData] = React.useState(null);
-  const location = useLocation();
+  const [loading, setLoading] = React.useState(null);
+  const [error, setError] = React.useState('');
   const navigate = useNavigate();
+
+  React.useEffect(() => {
+    const userLoggedRecovery = window.localStorage.getItem('user');
+    if (userLoggedRecovery) {
+      setData(JSON.parse(userLoggedRecovery));
+      console.log(userLoggedRecovery);
+    }
+  }, []);
 
   function responseOk(json) {
     const LoggedUser = {
@@ -22,17 +31,22 @@ export const AuthProvider = ({ children }) => {
   }
 
   async function userLogin(api) {
-    const { response, json } = await userFetch(api);
-    if (response.ok) {
-      responseOk(json);
+    setLoading(true);
+    const { response, json, erro } = await userFetch(api);
+    if (response) {
+      setLoading(false);
+      setError(erro);
     }
+    response.ok && responseOk(json);
   }
 
   async function loginCreate(api) {
-    const { response, json } = await userFetch(api);
-    if (response.ok) {
-      responseOk(json);
+    const { response, json, erro } = await userFetch(api);
+    if (response) {
+      setLoading(false);
+      setError(erro);
     }
+    response.ok && responseOk(json);
   }
 
   function userLogout() {
@@ -50,6 +64,8 @@ export const AuthProvider = ({ children }) => {
         userFetch,
         loginCreate,
         userLogout,
+        loading,
+        error,
       }}
     >
       {children}

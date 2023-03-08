@@ -6,8 +6,8 @@ import React from 'react';
 
 function App() {
   const [colorTheme, setColorTheme] = React.useState('blueviolet');
-  document.documentElement.style.setProperty('--color-theme', colorTheme);
 
+  document.documentElement.style.setProperty('--color-theme', colorTheme);
   function changeColor(event) {
     const color = event
       .getAttribute('style')

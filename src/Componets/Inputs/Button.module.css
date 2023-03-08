@@ -7,4 +7,28 @@
   margin-top: 1.5rem;
   border: none;
   font-size: 1.2rem;
+  transition: .2s;
+  cursor: pointer;
+}
+.button:hover{
+  opacity: .8;
+
+}
+.button:disabled{
+opacity: .4;
+}
+@media (max-width:420px) {
+  .button{
+    padding: .5rem 1rem;
+    border-radius: 6px;
+    margin-top: 1.2rem;
+    font-size: 1rem;
+    }
+      
+  .input{
+    padding: .3rem ;
+    border-radius: 6px;
+    font-size: 1rem;
+    
+  }
 }

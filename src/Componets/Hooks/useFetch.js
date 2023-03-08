@@ -1,18 +1,19 @@
 export async function userFetch(api) {
   let response;
   let json;
+  let erro;
+
   try {
     const { url, options } = api;
     response = await fetch(url, options);
     json = await response.json();
-    console.log(json);
     if (response.ok === false) {
       throw new Error(json.error.message);
     }
   } catch (err) {
-    console.log(err.message);
+    erro = err.message;
     json = null;
   }
 
-  return { response, json };
+  return { response, json, erro };
 }
