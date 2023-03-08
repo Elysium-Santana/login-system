@@ -9,8 +9,8 @@ const Home = () => {
   const { data } = useContext(AuthContext);
   const texts = {
     _criar: {
-      h1: 'Ha, é novo por aqui!',
-      p: 'Que ótimo ter um novo rosto por aqui! Para aproveitar tudo que temos a oferecer, crie uma conta agora mesmo. É rápido e fácil, basta preencher alguns dados e  clicar em "Criar conta',
+      h1: 'É novo por aqui...',
+      p: 'Que ótimo! Um novo rosto por aqui! Para aproveitar tudo que temos a oferecer, crie uma conta agora mesmo. É rápido e fácil, basta preencher alguns dados e  clicar em "Criar conta',
     },
     _user: {
       h1: `Olá, ${data && data.displayName}!`,
