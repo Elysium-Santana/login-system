@@ -43,7 +43,8 @@
 }
 @media (max-width:520px) {
   .conteiner{
-    margin: 0 1rem;    
+    margin: 0 1rem 1rem 1rem; 
+
   }  
   .homeContent{
     padding: 1rem;

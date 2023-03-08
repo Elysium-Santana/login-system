@@ -28,7 +28,7 @@ color:var(--color-theme);
 }
 @media (max-width:520px) {
   .form{ 
-    padding: 1rem 1rem 2rem 1rem;     
+    padding: 3rem 1rem;     
   }
   
 }
